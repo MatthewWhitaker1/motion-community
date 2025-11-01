@@ -1,3 +1,4 @@
+import { UploadButton } from "@/components/buttons/UploadButton";
 import Header from "@/components/header";
 import Waveform from "@/components/Waveform";
 
@@ -8,6 +9,7 @@ export default function Home() {
     <div>
       <Header />
       <Waveform audio={audioUrl} />
+      <UploadButton />
     </div>
   );
 }

@@ -52,17 +52,26 @@ Waveform.propTypes = {
 };
 
 const WaveSurferWrap = styled.div`
-    display: grid;
-    grid-template-columns: 40px 1fr;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  align-items: center;
+  max-width: 500px; // Add max-width constraint
+  width: 100%;      // Make it responsive
+  margin: 0 auto;   // Center the container
+  gap: 1rem;        // Add space between play button and waveform
 
-    button {
-        width: 40px;
-        height: 40px;
-        border: none;
-        padding: 0;
-        background-color: white;
-    }
+  button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    padding: 0;
+    background-color: white;
+  }
+
+  & > div {         // Target the waveform container
+    width: 100%;
+    min-width: 200px;
+  }
 `;
 
 
