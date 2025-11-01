@@ -1,7 +1,7 @@
 import Header from "@/components/header";
 import Waveform from "@/components/Waveform";
 
-const audioUrl = new URL('localhost:3000')
+const audioUrl = new URL('https://matthewwhitaker1.github.io/piano.mp3').toString();
 
 export default function Home() {
   return (

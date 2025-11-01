@@ -21,7 +21,7 @@ const Waveform = ({ audio }) => {
             barHeight: 10,
             cursorWidth: 0
         });
-        waveSurfer.loadBlob(audio);
+        waveSurfer.load(audio);
         waveSurfer.on('ready', () => {
             waveSurferRef.current = waveSurfer;
         });
