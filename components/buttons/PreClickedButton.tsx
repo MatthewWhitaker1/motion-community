@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 
 export function PreClickedButton({ 
   onClick, 
@@ -6,9 +6,10 @@ export function PreClickedButton({
   ...props 
 }: React.ComponentProps<typeof Button>) {
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    console.log('PreClickedButton: handling click event');
     e.preventDefault();
     onClick?.(e);
-  }
+  };
 
   return (
     <Button 

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
@@ -14,6 +14,7 @@ const Waveform = ({ audio }) => {
     const [ isPlaying, toggleIsPlaying ] = useState(false);
 
     useEffect(() => {
+        console.log('Initializing WaveSurfer with audio:', audio);
         const waveSurfer = WaveSurfer.create({
             container: containerRef.current,
             responsive: true,
@@ -21,15 +22,18 @@ const Waveform = ({ audio }) => {
             barHeight: 10,
             cursorWidth: 0
         });
+        
         waveSurfer.load(audio);
         waveSurfer.on('ready', () => {
+            console.log('WaveSurfer ready');
             waveSurferRef.current = waveSurfer;
         });
 
         return () => {
+            console.log('Cleaning up WaveSurfer instance');
             waveSurfer.destroy();
         };
-    }, [ audio ]);
+    }, [audio]);
 
     return (
         <WaveSurferWrap>
@@ -73,6 +77,5 @@ const WaveSurferWrap = styled.div`
     min-width: 200px;
   }
 `;
-
 
 export default Waveform;

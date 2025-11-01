@@ -1,3 +1,4 @@
+import { AudioUpload } from '@/components/AudioUpload'
 import { UploadButton } from "@/components/buttons/UploadButton";
 import Header from "@/components/header";
 import Waveform from "@/components/Waveform";
@@ -9,7 +10,9 @@ export default function Home() {
     <div>
       <Header />
       <Waveform audio={audioUrl} />
-      <UploadButton />
+      <div className="container mx-auto py-8">
+        <AudioUpload />
+      </div>
     </div>
   );
 }
