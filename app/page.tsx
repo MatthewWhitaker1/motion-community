@@ -1,9 +1,13 @@
 import Header from "@/components/header";
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import Waveform from "@/components/Waveform";
+
+const audioUrl = new URL('localhost:3000')
 
 export default function Home() {
   return (
-    <Header />
+    <div>
+      <Header />
+      <Waveform audio={audioUrl} />
+    </div>
   );
 }
