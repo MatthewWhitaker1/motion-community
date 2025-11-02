@@ -7,7 +7,6 @@ export function PreClickedButton({
 }: React.ComponentProps<typeof Button>) {
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     console.log('PreClickedButton: handling click event');
-    e.preventDefault();
     onClick?.(e);
   };
 

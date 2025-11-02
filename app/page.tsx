@@ -10,9 +10,9 @@ export default function Home() {
     <div>
       <Header />
       <Waveform audio={audioUrl} />
-      <div className="container mx-auto py-8">
+      <form className="container mx-auto py-8">
         <AudioUpload />
-      </div>
+      </form>
     </div>
   );
 }

@@ -18,10 +18,18 @@ export function AudioUpload() {
       const formData = new FormData()
       formData.append('file', file)
 
-      const response = await fetch('/api/upload', {
+    //   const apiEndpoint = 'https://61dbd520w3.execute-api.eu-west-1.amazonaws.com';
+      const endpoint = 'https://61dbd520w3.execute-api.eu-west-1.amazonaws.com/dev/api/upload'
+      const fetchParams: RequestInit = {
         method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
         body: formData
-      })
+      }
+      console.log('Sending request to:', endpoint);
+      console.log('Request parameters:', fetchParams);
+      const response = await fetch(endpoint, fetchParams)
 
       if (!response.ok) {
         throw new Error('Upload failed')
@@ -42,7 +50,7 @@ export function AudioUpload() {
         type="file"
         id="audio-upload"
         accept="audio/*"
-        className="hidden"
+        className="justify-center mb-4"
         onChange={handleUpload}
       />
       <label htmlFor="audio-upload">
